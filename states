@@ -1,0 +1,31 @@
+function App(){
+  const [input,setInput]=useState(""); //state 
+  
+  const Input=(event)=>{
+    setInput(event.target.value);
+  };
+
+  return(
+    <div className="App">
+      <input type="text" onChange={Input}/>
+      {input}
+    </div>
+  )
+  
+  // color changing text
+  
+  function App(){
+  const [text,setcolor]=useState("black"); //state 
+
+
+  return(
+    <div className="App">
+      <button onClick={()=>{
+        setcolor(text=="black"?"green":"black");
+        
+      }} >Show/Input</button>
+      <h2 style={{color:text}}>hello world</h2>
+    </div>
+
+  )
+}
