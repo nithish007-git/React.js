@@ -1,0 +1,35 @@
+export const Intialstate={
+    loading:false,
+    post:{},
+    error:false,
+}
+
+export const Postreducer=(state,action)=>{
+    switch(action.type){
+        case "FETCH_START":
+            return{
+                loading:false,
+                post:{},
+                error:false,
+
+            }
+
+            case "FETCH_SUCCESS":
+                return{
+                    loading:false,
+                    post:action.payload,
+                    error:false,
+                }
+
+                case "FETCH_ERROR":
+                    return{ 
+                        loading:false,
+                        post:{},
+                        error:false,
+                    }
+        
+    
+
+            }
+    }
+
