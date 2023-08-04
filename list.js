@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import Text from './text';
-
+import React from 'react'
+import Listcomp from './listcomp';
 
 const App = () => {
-  const [state,settate] =useState(false);
-  const [text,settext] =useState(false);
-  const setfunc =(event)=>{
-    settate(true)
-    settext(event.target.value)
-  }
+  const list1 =[
+    {
+      id:1,
+      name:"nithish",
+      std:"hello",
+    },
+    {
+      id:2,
+      name:"nithish12",
+      std:"hello1",
+    },
 
-  useEffect(() =>{
-    console.log("componet mountred")
-
-    return(()=>{
-      console.log("compound unmounted")
-    })
-  } ,[text])
+  ];
   return (
-    <div>
-      <input onChange={setfunc} />
-      { state && <Text bo={text}/>}
-    </div>
+    <>
+    {  list1.map((items)=>(<Listcomp  key={items.id}name={items.name} std={items.std}/>))
+}
+    </>
+    
   )
 }
 
